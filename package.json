@@ -1,0 +1,20 @@
+{
+  "name": "easemob-callback-node-demo",
+  "version": "1.0.0",
+  "main": "./src/index.js",
+  "scripts": {
+    "start": "node ./src/scripts/boot.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "chalk": "^4.1.2",
+    "concurrently": "^9.2.1"
+  }
+}
