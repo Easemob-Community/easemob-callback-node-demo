@@ -3,12 +3,25 @@
   "version": "1.0.0",
   "main": "./src/index.js",
   "scripts": {
-    "start": "node ./src/scripts/boot.js"
+    "start": "node ./src/scripts/boot.js",
+    "tunnel": "node ./src/scripts/boot.js --tunnel",
+    "no-tunnel": "pnpm run start --no-tunnel",
+    "pre-send": "node ./src/pre_send_webhook.js",
+    "post-send": "node ./src/post_send_webhook.js",
+    "both": "concurrently \"pnpm run pre-send\" \"pnpm run post-send\"",
+    "pre-send-tunnel": "node ./src/scripts/boot.js pre-send --tunnel",
+    "post-send-tunnel": "node ./src/scripts/boot.js post-send --tunnel"
   },
-  "keywords": [],
+  "keywords": [
+    "easemob",
+    "webhook",
+    "callback",
+    "node.js",
+    "express"
+  ],
   "author": "",
   "license": "ISC",
-  "description": "",
+  "description": "环信(Easemob)回调服务 Node.js 示例项目，提供分离的发送前(pre-send)和发送后(post-send)Webhook 接收服务，支持 JSON 高亮显示和 Cloudflare Tunnel 公网暴露",
   "dependencies": {
     "body-parser": "^2.2.0",
     "express": "^5.1.0"
